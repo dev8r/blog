@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2024-01-01T00:00:00.000Z" agent="draw.io" version="21.0.0" type="device">
+  <diagram name="MES Wafer Fabrication Use Case" id="mes-wafer-fab">
+    <mxGraphModel dx="1800" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1800" pageHeight="1300" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ===== TITLE ===== -->
+        <mxCell id="title" value="MES Use Case Diagram — Wafer Fabrication" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=20;fontStyle=1;fontColor=#1a237e;" vertex="1" parent="1">
+          <mxGeometry x="400" y="20" width="1000" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ===== SYSTEM BOUNDARY ===== -->
+        <mxCell id="sys_boundary" value="Manufacturing Execution System (MES)" style="points=[[0,0],[0.25,0],[0.5,0],[0.75,0],[1,0],[1,0.25],[1,0.5],[1,0.75],[1,1],[0.75,1],[0.5,1],[0.25,1],[0,1],[0,0.75],[0,0.5],[0,0.25]];shape=mxgraph.flowchart.start_2;fillColor=none;strokeColor=#1a237e;strokeWidth=2;fontStyle=1;fontSize=13;fontColor=#1a237e;verticalAlign=top;align=center;rounded=1;" vertex="1" parent="1">
+          <mxGeometry x="340" y="70" width="1120" height="1180" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== ACTORS (LEFT SIDE) ==================== -->
+
+        <!-- Production Operator -->
+        <mxCell id="actor_operator" value="Production&#xa;Operator" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="200" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Process Engineer -->
+        <mxCell id="actor_engineer" value="Process&#xa;Engineer" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="380" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Quality Engineer -->
+        <mxCell id="actor_quality" value="Quality&#xa;Engineer" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="560" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Maintenance Technician -->
+        <mxCell id="actor_maint" value="Maintenance&#xa;Technician" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="740" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Fab Manager -->
+        <mxCell id="actor_manager" value="Fab Manager" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="920" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ===== RIGHT SIDE ACTORS ===== -->
+
+        <!-- ERP System -->
+        <mxCell id="actor_erp" value="ERP System" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="200" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Equipment / Tool -->
+        <mxCell id="actor_equip" value="Equipment /&#xa;Tool (SECS/GEM)" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1610" y="420" width="80" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Statistical Process Control -->
+        <mxCell id="actor_spc" value="SPC / APC&#xa;System" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="640" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- LIMS -->
+        <mxCell id="actor_lims" value="LIMS" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1620" y="820" width="60" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== USE CASES ==================== -->
+
+        <!-- === COLUMN 1: WIP & LOT MANAGEMENT === -->
+        <mxCell id="uc_lot_dispatch" value="Lot Dispatching&#xa;&amp; Scheduling" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="130" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_wip_track" value="WIP Tracking&#xa;&amp; Visibility" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="210" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_lot_split" value="Lot Split /&#xa;Merge / Scrap" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="290" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_route_mgmt" value="Route &amp; Process&#xa;Flow Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="370" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_carrier_mgmt" value="Carrier / FOUP&#xa;Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="450" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- === COLUMN 2: EQUIPMENT & RECIPE === -->
+        <mxCell id="uc_equip_ctrl" value="Equipment&#xa;Control &amp; Monitoring" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="130" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_recipe_mgmt" value="Recipe / Process&#xa;Parameter Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="210" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_tool_alloc" value="Tool Allocation&#xa;&amp; Qualification" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="290" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_secs_gem" value="SECS/GEM Equipment&#xa;Integration" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="370" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_alarm_mgmt" value="Alarm Management&#xa;&amp; Notification" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="450" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- === COLUMN 3: QUALITY & SPC === -->
+        <mxCell id="uc_spc_ctrl" value="SPC / APC&#xa;Control" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="130" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_defect_inspect" value="Defect Inspection&#xa;&amp; Classification" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="210" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_hold_release" value="Lot Hold / Release&#xa;&amp; Disposition" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="290" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_sampling" value="Sampling Plan&#xa;Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="370" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_ocap" value="OCAP &amp; Corrective&#xa;Action Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="450" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- === COLUMN 4: MAINTENANCE === -->
+        <mxCell id="uc_pm_sched" value="Preventive Maintenance&#xa;Scheduling" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="130" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_equipment_history" value="Equipment History&#xa;&amp; Downtime Tracking" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="210" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_spare_parts" value="Spare Parts&#xa;Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="290" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_calibration" value="Equipment Calibration&#xa;&amp; Certification" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="370" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- === ROW 2: MATERIAL, REPORTING, TRACEABILITY === -->
+
+        <!-- Material Management -->
+        <mxCell id="uc_material_mgmt" value="Material / BOM&#xa;Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="390" y="580" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_inventory" value="Inventory &amp;&#xa;Consumables Tracking" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="660" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_wafer_map" value="Wafer Map&#xa;Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="390" y="740" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Traceability -->
+        <mxCell id="uc_traceability" value="Full Traceability&#xa;&amp; Genealogy" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="580" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_edc" value="Electronic Data&#xa;Collection (EDC)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="660" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_doc_ctrl" value="Document Control&#xa;&amp; e-Traveler" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="620" y="740" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Reporting & Analytics -->
+        <mxCell id="uc_kpi" value="KPI &amp; OEE&#xa;Dashboard" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="850" y="580" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_yield_analysis" value="Yield Analysis&#xa;&amp; Reporting" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="660" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_cycle_time" value="Cycle Time&#xa;Analysis" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="740" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- Integration & Security -->
+        <mxCell id="uc_erp_int" value="ERP Integration&#xa;(Orders, Inventory)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="580" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_user_mgmt" value="User &amp; Role&#xa;Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="660" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_esig" value="Electronic Signature&#xa;&amp; Audit Trail" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="740" width="170" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- === BOTTOM ROW: ADVANCED FUNCTIONS === -->
+        <mxCell id="uc_feol" value="FEOL Process&#xa;Step Execution" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="430" y="880" width="165" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_beol" value="BEOL Process&#xa;Step Execution" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#1a237e;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="640" y="880" width="165" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_photomask" value="Photomask /&#xa;Reticle Tracking" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="850" y="880" width="165" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_rework" value="Rework &amp;&#xa;Repair Management" style="ellipse;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1060" y="880" width="165" height="55" as="geometry" />
+        </mxCell>
+
+        <mxCell id="uc_nonconf" value="Non-Conformance&#xa;Management (NCR)" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="880" width="165" height="55" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== ASSOCIATIONS ==================== -->
+
+        <!-- Production Operator associations -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_operator" target="uc_lot_dispatch" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_operator" target="uc_wip_track" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_operator" target="uc_carrier_mgmt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_operator" target="uc_edc" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_operator" target="uc_feol" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_operator" target="uc_beol" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Process Engineer associations -->
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_engineer" target="uc_recipe_mgmt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_engineer" target="uc_route_mgmt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_engineer" target="uc_spc_ctrl" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_engineer" target="uc_tool_alloc" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_engineer" target="uc_ocap" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_engineer" target="uc_yield_analysis" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_engineer" target="uc_photomask" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Quality Engineer associations -->
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_quality" target="uc_defect_inspect" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_quality" target="uc_hold_release" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_quality" target="uc_sampling" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_quality" target="uc_traceability" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_quality" target="uc_nonconf" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_quality" target="uc_esig" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Maintenance Technician associations -->
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_maint" target="uc_pm_sched" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_maint" target="uc_equipment_history" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_maint" target="uc_spare_parts" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e23" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_maint" target="uc_calibration" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e24" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_maint" target="uc_rework" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Fab Manager associations -->
+        <mxCell id="e25" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_manager" target="uc_kpi" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e26" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_manager" target="uc_cycle_time" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e27" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_manager" target="uc_user_mgmt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e28" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_manager" target="uc_lot_split" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ERP System associations -->
+        <mxCell id="e29" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_erp" target="uc_erp_int" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e30" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_erp" target="uc_inventory" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e31" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_erp" target="uc_material_mgmt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- Equipment / Tool associations -->
+        <mxCell id="e32" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_equip" target="uc_secs_gem" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e33" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_equip" target="uc_equip_ctrl" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e34" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_equip" target="uc_alarm_mgmt" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- SPC System associations -->
+        <mxCell id="e35" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_spc" target="uc_spc_ctrl" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e36" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_spc" target="uc_yield_analysis" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- LIMS associations -->
+        <mxCell id="e37" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_lims" target="uc_defect_inspect" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="e38" style="edgeStyle=orthogonalEdgeStyle;" edge="1" source="actor_lims" target="uc_sampling" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+
+        <!-- ==================== INCLUDE RELATIONSHIPS ==================== -->
+
+        <!-- WIP Tracking <<includes>> Wafer Map -->
+        <mxCell id="inc1" value="&lt;&lt;include&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;fontSize=9;fontStyle=2;" edge="1" source="uc_wip_track" target="uc_wafer_map" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Lot Dispatch <<includes>> Route Management -->
+        <mxCell id="inc2" value="&lt;&lt;include&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;fontSize=9;fontStyle=2;" edge="1" source="uc_lot_dispatch" target="uc_route_mgmt" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- FEOL <<includes>> EDC -->
+        <mxCell id="inc3" value="&lt;&lt;include&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;fontSize=9;fontStyle=2;" edge="1" source="uc_feol" target="uc_edc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- BEOL <<includes>> EDC -->
+        <mxCell id="inc4" value="&lt;&lt;include&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;fontSize=9;fontStyle=2;" edge="1" source="uc_beol" target="uc_edc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- SPC Control <<extends>> Yield Analysis -->
+        <mxCell id="ext1" value="&lt;&lt;extend&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;fontSize=9;fontStyle=2;" edge="1" source="uc_spc_ctrl" target="uc_yield_analysis" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Defect Inspect <<extends>> OCAP -->
+        <mxCell id="ext2" value="&lt;&lt;extend&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;fontSize=9;fontStyle=2;" edge="1" source="uc_defect_inspect" target="uc_ocap" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Hold/Release <<includes>> Traceability -->
+        <mxCell id="inc5" value="&lt;&lt;include&gt;&gt;" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;fontSize=9;fontStyle=2;" edge="1" source="uc_hold_release" target="uc_traceability" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ==================== LEGEND ==================== -->
+        <mxCell id="legend_box" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="355" y="980" width="790" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="legend_title" value="LEGEND" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="985" width="120" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Color legend items -->
+        <mxCell id="leg1" value="" style="ellipse;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1"><mxGeometry x="370" y="1020" width="50" height="25" as="geometry" /></mxCell>
+        <mxCell id="leg1t" value="WIP &amp; Lot Management" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="430" y="1020" width="180" height="25" as="geometry" /></mxCell>
+
+        <mxCell id="leg2" value="" style="ellipse;fillColor=#d5e8d4;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1"><mxGeometry x="370" y="1055" width="50" height="25" as="geometry" /></mxCell>
+        <mxCell id="leg2t" value="Equipment &amp; Recipe Control" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="430" y="1055" width="180" height="25" as="geometry" /></mxCell>
+
+        <mxCell id="leg3" value="" style="ellipse;fillColor=#fff2cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1"><mxGeometry x="370" y="1090" width="50" height="25" as="geometry" /></mxCell>
+        <mxCell id="leg3t" value="Quality &amp; SPC" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="430" y="1090" width="180" height="25" as="geometry" /></mxCell>
+
+        <mxCell id="leg4" value="" style="ellipse;fillColor=#ffe6cc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1"><mxGeometry x="370" y="1125" width="50" height="25" as="geometry" /></mxCell>
+        <mxCell id="leg4t" value="Maintenance Management" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="430" y="1125" width="180" height="25" as="geometry" /></mxCell>
+
+        <mxCell id="leg5" value="" style="ellipse;fillColor=#e1d5e7;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1"><mxGeometry x="370" y="1160" width="50" height="25" as="geometry" /></mxCell>
+        <mxCell id="leg5t" value="Material Management" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="430" y="1160" width="180" height="25" as="geometry" /></mxCell>
+
+        <mxCell id="leg6" value="" style="ellipse;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=10;" vertex="1" parent="1"><mxGeometry x="370" y="1195" width="50" height="25" as="geometry" /></mxCell>
+        <mxCell id="leg6t" value="Integration &amp; Security / External" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="430" y="1195" width="180" height="25" as="geometry" /></mxCell>
+
+        <!-- Relationship legend -->
+        <mxCell id="leg7" value="" style="edgeStyle=orthogonalEdgeStyle;dashed=1;endArrow=open;endFill=0;" edge="1" source="leg7s" target="leg7e" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="leg7s" value="" style="point;" vertex="1" parent="1"><mxGeometry x="680" y="1032" width="1" height="1" as="geometry" /></mxCell>
+        <mxCell id="leg7e" value="" style="point;" vertex="1" parent="1"><mxGeometry x="740" y="1032" width="1" height="1" as="geometry" /></mxCell>
+        <mxCell id="leg7t" value="&lt;&lt;include&gt;&gt; / &lt;&lt;extend&gt;&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="750" y="1020" width="200" height="25" as="geometry" /></mxCell>
+
+        <mxCell id="leg8" value="" style="endArrow=none;" edge="1" source="leg8s" target="leg8e" parent="1"><mxGeometry relative="1" as="geometry" /></mxCell>
+        <mxCell id="leg8s" value="" style="point;" vertex="1" parent="1"><mxGeometry x="680" y="1067" width="1" height="1" as="geometry" /></mxCell>
+        <mxCell id="leg8e" value="" style="point;" vertex="1" parent="1"><mxGeometry x="740" y="1067" width="1" height="1" as="geometry" /></mxCell>
+        <mxCell id="leg8t" value="Actor — Use Case Association" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="750" y="1055" width="220" height="25" as="geometry" /></mxCell>
+
+        <mxCell id="leg9" value="Actor" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#1a237e;fontSize=9;" vertex="1" parent="1"><mxGeometry x="690" y="1090" width="40" height="55" as="geometry" /></mxCell>
+        <mxCell id="leg9t" value="Internal Actor (Human)" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="745" y="1105" width="200" height="25" as="geometry" /></mxCell>
+
+        <mxCell id="leg10" value="System" style="shape=mxgraph.uml.actor;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#1a237e;fontSize=9;" vertex="1" parent="1"><mxGeometry x="690" y="1155" width="40" height="55" as="geometry" /></mxCell>
+        <mxCell id="leg10t" value="External System Actor" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=10;" vertex="1" parent="1"><mxGeometry x="745" y="1170" width="200" height="25" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
